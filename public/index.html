@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page-title">Warehouse Picker System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .language-btn {
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .language-btn:hover, .language-btn.active {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
+        }
+        .card {
+            background: white;
+            color: #333;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .chinese-font {
+            font-family: "Microsoft JhengHei", "PingFang TC", "Hiragino Sans TC", "Noto Sans TC", "Source Han Sans TC", "WenQuanYi Micro Hei", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <span data-i18n="language-label">Language:</span>
+        <button class="language-btn active" onclick="changeLanguage('en')">🇬🇧</button>
+        <button class="language-btn" onclick="changeLanguage('zh-TW')">🇭🇰</button>
+        <button class="language-btn" onclick="changeLanguage('zh-CN')">🇨🇳</button>
+    </div>
+
+    <div class="container">
+        <h1 data-i18n="main-title">AOC Freight Out System</h1>
+        <p data-i18n="main-subtitle">All in one solution</p>
+        
+        <div class="card">
+            <h2 data-i18n="booking-title">📝 Make Bookings</h2>
+            <p data-i18n="booking-desc">Make bookings to forwarder or courier for pick up</p>
+            <a href="/booking.html" class="btn" data-i18n="booking-btn">Access Booking Portal</a>
+        </div>
+
+        <div class="card">
+            <h2 data-i18n="warehouse-title">📦 Warehouse Operations</h2>
+            <p data-i18n="warehouse-desc">Manage shipping orders and parts inventory</p>
+            <a href="/warehouse.html" class="btn" data-i18n="warehouse-btn">Access Warehouse Portal</a>
+        </div>
+
+        <div class="card">
+            <h2 data-i18n="forwarder-title">🚛 Forwarder Portal</h2>
+            <p data-i18n="forwarder-desc">Register pickers and generate QR codes</p>
+            <a href="/forwarder.html" class="btn" data-i18n="forwarder-btn">Access Forwarder Portal</a>
+        </div>
+        
+        <div class="card">
+            <h2 data-i18n="gate-title">🚪 Gate Verification</h2>
+            <p data-i18n="gate-desc">Verify picker identity and authorize access</p>
+            <a href="/verification.html" class="btn" data-i18n="gate-btn">Access Gate Portal</a>
+        </div>
+        
+        <div class="card">
+            <h2 data-i18n="dashboard-title">📊 Dashboard</h2>
+            <p data-i18n="dashboard-desc">Monitor operations and view reports</p>
+            <a href="/dashboard.html" class="btn" data-i18n="dashboard-btn">Access Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Language data
+        const translations = {
+            'en': {
+                'page-title': 'Warehouse Picker System',
+                'language-label': 'Language:',
+                'main-title': 'AOC Freight-Out System',
+                'main-subtitle': 'All in one Solution',
+                'booking-title': '📝 Make Bookings',
+                'booking-desc': 'Make bookings to forwarder or courier for pick up',
+                'booking-btn': 'Access Booking Portal',
+                'warehouse-title': '📦 Warehouse Operations',
+                'warehouse-desc': 'Manage shipping orders and parts inventory',
+                'warehouse-btn': 'Access Warehouse Portal',
+                'forwarder-title': '🚛 Forwarder Portal',
+                'forwarder-desc': 'Register pickers and generate QR codes',
+                'forwarder-btn': 'Access Forwarder Portal',
+                'gate-title': '🚪 Gate Verification',
+                'gate-desc': 'Verify picker identity and authorize access',
+                'gate-btn': 'Access Gate Portal',
+                'dashboard-title': '📊 Dashboard',
+                'dashboard-desc': 'Monitor operations and view reports',
+                'dashboard-btn': 'Access Dashboard'
+            },
+            'zh-TW': {
+                'page-title': '倉庫揀貨員系統',
+                'language-label': '語言：',
+                'main-title': '倉庫揀貨員系統',
+                'main-subtitle': '安全航空零件驗證平台',
+                'booking-title': '📝 預約服務',
+                'booking-desc': '向承運商或快遞公司預約取貨服務',
+                'booking-btn': '進入預約平台',
+                'warehouse-title': '📦 倉庫作業',
+                'warehouse-desc': '管理出貨訂單和零件庫存',
+                'warehouse-btn': '進入倉庫平台',
+                'forwarder-title': '🚛 承運商平台',
+                'forwarder-desc': '註冊揀貨員並生成二維碼',
+                'forwarder-btn': '進入承運商平台',
+                'gate-title': '🚪 門禁驗證',
+                'gate-desc': '驗證揀貨員身份並授權進入',
+                'gate-btn': '進入門禁平台',
+                'dashboard-title': '📊 儀表板',
+                'dashboard-desc': '監控作業並查看報告',
+                'dashboard-btn': '進入儀表板'
+            },
+            'zh-CN': {
+                'page-title': '仓库拣货员系统',
+                'language-label': '语言：',
+                'main-title': '仓库拣货员系统',
+                'main-subtitle': '安全航空零件验证平台',
+                'booking-title': '📝 预约服务',
+                'booking-desc': '向承运商或快递公司预约取货服务',
+                'booking-btn': '进入预约平台',
+                'warehouse-title': '📦 仓库作业',
+                'warehouse-desc': '管理出货订单和零件库存',
+                'warehouse-btn': '进入仓库平台',
+                'forwarder-title': '🚛 承运商平台',
+                'forwarder-desc': '注册拣货员并生成二维码',
+                'forwarder-btn': '进入承运商平台',
+                'gate-title': '🚪 门禁验证',
+                'gate-desc': '验证拣货员身份并授权进入',
+                'gate-btn': '进入门禁平台',
+                'dashboard-title': '📊 仪表板',
+                'dashboard-desc': '监控作业并查看报告',
+                'dashboard-btn': '进入仪表板'
+            }
+        };
+
+        // Current language
+        let currentLanguage = 'en';
+
+        // Change language function
+        function changeLanguage(language) {
+            currentLanguage = language;
+            
+            // Update active button
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Apply translations
+            applyTranslations();
+            
+            // Update font family for Chinese
+            updateFontFamily();
+            
+            // Store language preference in session
+            sessionStorage.setItem('preferredLanguage', language);
+        }
+
+        // Apply translations
+        function applyTranslations() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    element.textContent = translations[currentLanguage][key];
+                }
+            });
+            
+            // Update page title
+            document.title = translations[currentLanguage]['page-title'] || 'Warehouse Picker System';
+        }
+
+        // Update font family for Chinese languages
+        function updateFontFamily() {
+            const body = document.body;
+            if (currentLanguage === 'zh-TW' || currentLanguage === 'zh-CN') {
+                body.classList.add('chinese-font');
+            } else {
+                body.classList.remove('chinese-font');
+            }
+        }
+
+        // Initialize language
+        function initLanguage() {
+            // Check if there's a stored preference
+            const stored = sessionStorage.getItem('preferredLanguage');
+            if (stored && translations[stored]) {
+                currentLanguage = stored;
+                
+                // Update active button
+                document.querySelectorAll('.language-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.includes(stored === 'en' ? 'EN' : stored === 'zh-TW' ? '繁中' : '简中')) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            applyTranslations();
+            updateFontFamily();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initLanguage);
+    </script>
+</body>
+</html>

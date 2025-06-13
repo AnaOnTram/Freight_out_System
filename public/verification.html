@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Verification Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .verification-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            animation: slideIn 0.6s ease-out;
+            margin-bottom: 30px;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            color: #28a745;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 20px 60px 20px 20px;
+            border: 3px solid #28a745;
+            border-radius: 15px;
+            font-size: 18px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #218838;
+            transform: translateY(-50%) translateY(-2px);
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .verification-result {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .status-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .status-approved {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .status-denied {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+        }
+
+        .status-expired {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            color: #333;
+        }
+
+        .status-card h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .status-card p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #28a745;
+        }
+
+        .info-section h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .info-value {
+            color: #333;
+            font-family: monospace;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-approve {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .btn-deny {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .timestamp {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #28a745;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .instructions {
+            background: #e8f5e8;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #28a745;
+        }
+
+        .instructions h3 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            color: #155724;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .verification-card {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        .verification-log {
+            margin-top: 30px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .log-entry {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .log-time {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .log-action {
+            font-weight: 600;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="nav-link">← Back to Main Portal</a>
+            <h1>🚪 Gate Verification Portal</h1>
+            <p>Secure Access Control for Aircraft Parts Warehouse</p>
+        </div>
+
+        <div class="verification-card">
+            <div class="instructions">
+                <h3>🔍 Verification Instructions</h3>
+                <ul>
+                    <li>Scan QR code with mobile device or enter QR code manually</li>
+                    <li>Enter PI number directly if QR code is not available</li>
+                    <li>Verify picker identity matches HKID document</li>
+                    <li>Check vehicle license plate if provided</li>
+                    <li>Confirm pickup or deny access based on verification</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">
+                🔐 Picker Identity Verification
+            </h2>
+            
+            <div id="verification-alert"></div>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" 
+                       placeholder="Enter QR Code ID or PI Number (e.g., WHXXXXX or PI2024001)">
+                <button id="search-btn" class="search-btn">🔍 Verify</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Verifying picker identity...</p>
+            </div>
+
+            <div id="verification-result" class="verification-result">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+
+        <div class="verification-card" style="display: none;" id="recent-verifications">
+            <h2 class="section-title">
+                📋 Recent Verifications
+            </h2>
+            <div id="verification-log" class="verification-log">
+                <!-- Recent verification logs will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE_URL = '/api';
+        
+        // Global variables
+        let currentVerification = null;
+        let verificationHistory = [];
+
+        // Initialize the application
+        function init() {
+            // Add event listeners
+            document.getElementById('search-btn').addEventListener('click', performVerification);
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performVerification();
+                }
+            });
+
+            // Load recent verifications
+            loadRecentVerifications();
+            
+            // Check for QR parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const qrParam = urlParams.get('qr');
+            if (qrParam) {
+                document.getElementById('search-input').value = qrParam;
+                performVerification();
+            }
+        }
+
+        // Perform verification
+        async function performVerification() {
+            const searchValue = document.getElementById('search-input').value.trim();
+            const loadingDiv = document.getElementById('loading');
+            const resultDiv = document.getElementById('verification-result');
+            
+            if (!searchValue) {
+                showAlert('error', 'Please enter a QR Code ID or PI Number');
+                return;
+            }
+
+            loadingDiv.style.display = 'block';
+            resultDiv.style.display = 'none';
+
+            try {
+                // Try to verify with the API
+                const response = await fetch(`${API_BASE_URL}/verification/${searchValue}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    currentVerification = result.data;
+                    displayVerificationResult(result.data);
+                    addToVerificationLog(searchValue, 'Verified', 'success');
+                } else {
+                    throw new Error(result.message || 'Verification failed');
+                }
+
+            } catch (error) {
+                console.error('Verification error:', error);
+                showAlert('error', `Verification failed: ${error.message}`);
+                addToVerificationLog(searchValue, 'Failed', 'error');
+            } finally {
+                loadingDiv.style.display = 'none';
+            }
+        }
+
+        // Display verification result
+        function displayVerificationResult(data) {
+            const resultDiv = document.getElementById('verification-result');
+            
+            // Determine status
+            let statusClass = 'status-approved';
+            let statusIcon = '✅';
+            let statusText = 'ACCESS APPROVED';
+            let statusMessage = 'Picker identity verified. Access granted.';
+
+            // Check if expired
+            if (data.verification && data.verification.expiryTime) {
+                const expiryTime = new Date(data.verification.expiryTime);
+                const now = new Date();
+                
+                if (now > expiryTime) {
+                    statusClass = 'status-expired';
+                    statusIcon = '⚠️';
+                    statusText = 'QR CODE EXPIRED';
+                    statusMessage = 'QR code has expired. Please request new registration.';
+                }
+            }
+
+            // Build picker information
+            const pickerInfo = `
+                <div class="info-row">
+                    <span class="info-label">Picker Name:</span>
+                    <span class="info-value">${data.picker.pickerName}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">HKID Number:</span>
+                    <span class="info-value">${data.picker.hkidNumber}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Contact:</span>
+                    <span class="info-value">${data.picker.pickerContact}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Car Plate:</span>
+                    <span class="info-value">${data.picker.carPlate || 'Not provided'}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Forwarder:</span>
+                    <span class="info-value">${data.picker.forwarderName}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Registration:</span>
+                    <span class="info-value">${new Date(data.picker.registrationTime).toLocaleString()}</span>
+                </div>
+            `;
+
+            // Build shipping information
+            let shippingInfo = '';
+            if (data.shippingOrder) {
+                shippingInfo = `
+                    <div class="info-section">
+                        <h3>📦 Shipping Order Details</h3>
+                        <div class="info-row">
+                            <span class="info-label">PI Number:</span>
+                            <span class="info-value">${data.picker.piNumber}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Parts Number:</span>
+                            <span class="info-value">${data.shippingOrder.partsNumber}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Serial Number:</span>
+                            <span class="info-value">${data.shippingOrder.serialNumber}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Weight:</span>
+                            <span class="info-value">${data.shippingOrder.weight} kg</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Dimensions:</span>
+                            <span class="info-value">${data.shippingOrder.dimensions.length} × ${data.shippingOrder.dimensions.width} × ${data.shippingOrder.dimensions.height} cm</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value">${data.shippingOrder.pickingStatus}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                shippingInfo = `
+                    <div class="info-section">
+                        <h3>📦 Shipping Order Details</h3>
+                        <div class="info-row">
+                            <span class="info-label">PI Number:</span>
+                            <span class="info-value">${data.picker.piNumber}</span>
+                        </div>
+                        <p style="color: #666; font-style: italic; margin-top: 10px;">
+                            No shipping order details available for this PI number.
+                        </p>
+                    </div>
+                `;
+            }
+
+            // Build action buttons
+            let actionButtons = '';
+            if (statusClass === 'status-approved') {
+                actionButtons = `
+                    <div class="action-buttons">
+                        <button class="btn btn-approve" onclick="confirmPickup()">
+                            ✅ Confirm Pickup
+                        </button>
+                        <button class="btn btn-deny" onclick="denyAccess()">
+                            ❌ Deny Access
+                        </button>
+                        <button class="btn btn-secondary" onclick="viewFullDetails()">
+                            📋 View Full Details
+                        </button>
+                    </div>
+                `;
+            } else {
+                actionButtons = `
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" onclick="clearVerification()">
+                            🔄 Clear & Try Again
+                        </button>
+                    </div>
+                `;
+            }
+
+            resultDiv.innerHTML = `
+                <div class="status-card ${statusClass}">
+                    <h2>${statusIcon} ${statusText}</h2>
+                    <p>${statusMessage}</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-section">
+                        <h3>👤 Picker Information</h3>
+                        ${pickerInfo}
+                    </div>
+                    ${shippingInfo}
+                </div>
+                
+                ${actionButtons}
+                
+                <div class="timestamp">
+                    Verification Time: ${new Date().toLocaleString()}
+                </div>
+            `;
+
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Confirm pickup
+        async function confirmPickup() {
+            if (!currentVerification) return;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/verification/confirm`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        qrCodeId: currentVerification.picker.qrCodeId,
+                        gateOperator: 'Gate Security',
+                        notes: 'Pickup confirmed at gate verification'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showAlert('success', '✅ Pickup confirmed successfully! Status updated to completed.');
+                    addToVerificationLog(currentVerification.picker.qrCodeId, 'Pickup Confirmed', 'success');
+                    
+                    // Update the display
+                    document.querySelector('.status-card').innerHTML = `
+                        <h2>✅ PICKUP CONFIRMED</h2>
+                        <p>Pickup has been confirmed and logged. Status updated to completed.</p>
+                    `;
+                    
+                    // Remove action buttons
+                    document.querySelector('.action-buttons').style.display = 'none';
+                } else {
+                    throw new Error(result.message || 'Failed to confirm pickup');
+                }
+
+            } catch (error) {
+                console.error('Confirm pickup error:', error);
+                showAlert('error', `Failed to confirm pickup: ${error.message}`);
+            }
+        }
+
+        // Deny access
+        function denyAccess() {
+            const reason = prompt('Please provide a reason for denying access:');
+            if (reason) {
+                showAlert('warning', `❌ Access denied. Reason: ${reason}`);
+                addToVerificationLog(currentVerification.picker.qrCodeId, `Access Denied: ${reason}`, 'warning');
+                
+                // Update the display
+                document.querySelector('.status-card').innerHTML = `
+                    <h2>❌ ACCESS DENIED</h2>
+                    <p>Access has been denied. Reason: ${reason}</p>
+                `;
+                document.querySelector('.status-card').className = 'status-card status-denied';
+                
+                // Remove action buttons
+                document.querySelector('.action-buttons').style.display = 'none';
+            }
+        }
+
+        // View full details
+        function viewFullDetails() {
+            if (!currentVerification) return;
+
+            const details = JSON.stringify(currentVerification, null, 2);
+            const detailsWindow = window.open('', '_blank');
+            detailsWindow.document.write(`
+                <html>
+                <head>
+                    <title>Full Verification Details</title>
+                    <style>
+                        body { font-family: monospace; padding: 20px; }
+                        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; }
+                    </style>
+                </head>
+                <body>
+                    <h2>Full Verification Details</h2>
+                    <pre>${details}</pre>
+                </body>
+                </html>
+            `);
+        }
+
+        // Clear verification
+        function clearVerification() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('verification-result').style.display = 'none';
+            currentVerification = null;
+            document.getElementById('search-input').focus();
+        }
+
+        // Add to verification log
+        function addToVerificationLog(searchValue, action, type) {
+            const logEntry = {
+                time: new Date().toLocaleString(),
+                searchValue: searchValue,
+                action: action,
+                type: type
+            };
+            
+            verificationHistory.unshift(logEntry);
+            
+            // Keep only last 10 entries
+            if (verificationHistory.length > 10) {
+                verificationHistory = verificationHistory.slice(0, 10);
+            }
+            
+            updateVerificationLog();
+        }
+
+        // Update verification log display
+        function updateVerificationLog() {
+            const logDiv = document.getElementById('verification-log');
+            const recentDiv = document.getElementById('recent-verifications');
+            
+            if (verificationHistory.length > 0) {
+                recentDiv.style.display = 'block';
+                
+                logDiv.innerHTML = verificationHistory.map(entry => `
+                    <div class="log-entry">
+                        <div class="log-time">${entry.time}</div>
+                        <div class="log-action">${entry.action}</div>
+                        <div style="color: #666;">${entry.searchValue}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Load recent verifications
+        function loadRecentVerifications() {
+            // This would typically load from localStorage or API
+            // For now, we'll just show the current session history
+            updateVerificationLog();
+        }
+
+        // Show alert function
+        function showAlert(type, message) {
+            const container = document.getElementById('verification-alert');
+            container.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 5000);
+        }
+
+        // Initialize application
+        init();
+    </script>
+</body>
+</html>

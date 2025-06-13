@@ -1,0 +1,459 @@
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.609Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.612Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.613Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.613Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.618Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.619Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.619Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.619Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.634Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:39:09.653Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:45:47.333Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.892Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.894Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.895Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.895Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.897Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.898Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.898Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.898Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.911Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:48:25.924Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.425Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.428Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.429Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.429Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.433Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.434Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.434Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.434Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.445Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:55:17.459Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.567Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.569Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.570Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.572Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.574Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.575Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.575Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.575Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.585Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:10.599Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.834Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.836Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.836Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.837Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.841Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.841Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.841Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.841Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.851Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:57:32.866Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.604Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.606Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.606Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.607Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.611Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.611Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.612Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.612Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.622Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T09:59:56.637Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.414Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.416Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.417Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.417Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.421Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.422Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.422Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.422Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.433Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-12T10:00:06.448Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T00:58:56.223Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.609Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.611Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.612Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.612Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.614Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.615Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.615Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.615Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.633Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T00:59:09.647Z"}
+{"level":"warn","message":"Forwarder routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.273Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.334Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.335Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.335Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.337Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.338Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.338Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.338Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.357Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:07:11.373Z"}
+{"level":"warn","message":"Forwarder routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.703Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.738Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.739Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.739Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.742Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.742Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.742Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.742Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.758Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:08:03.776Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.053Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.063Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.063Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.064Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.066Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.066Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.066Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.066Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.081Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:05.093Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:08.640Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.405Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.415Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.416Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.416Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.418Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.418Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.418Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.418Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.432Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:09:14.448Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:32.778Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.367Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.377Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.378Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.378Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.380Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.380Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.381Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.381Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.395Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:29:37.412Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:35:36.483Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.918Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.927Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.928Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.928Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.930Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.931Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.931Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.931Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.946Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:37:18.961Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:41:04.822Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.614Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.624Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.625Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.625Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.627Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.627Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.627Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.628Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.644Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:42:36.660Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:44:11.562Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.897Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.906Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.907Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.907Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.909Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.909Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.909Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.910Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.925Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:48:01.941Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.193Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.203Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.203Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.204Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.206Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.206Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.206Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.206Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.221Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:20.235Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.956Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.966Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.967Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.967Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.969Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.969Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.969Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.969Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.984Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:53:31.998Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.244Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.255Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.255Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.256Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.258Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.258Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.258Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.258Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.274Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:14.290Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.384Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.394Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.395Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.395Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.397Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.398Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.398Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.398Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.413Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:54:25.428Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.272Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.282Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.283Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.283Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.285Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.285Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.286Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.286Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.301Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:03.315Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.337Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.347Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.348Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.348Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.350Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.350Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.351Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.351Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.367Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:55:11.382Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:22.209Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.765Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.775Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.775Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.775Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.778Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.778Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.778Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.778Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.794Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:56:23.809Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:58:44.356Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.158Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.167Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.168Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.168Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.170Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.170Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.170Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.170Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.185Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T01:59:10.199Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T02:02:29.468Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.440Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.450Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.451Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.451Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.453Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.453Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.453Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.454Z"}
+{"level":"info","message":"✅ Database connected successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.468Z"}
+{"level":"info","message":"✅ Database tables initialized successfully","service":"warehouse-picker-api","timestamp":"2025-06-13T02:10:24.484Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.659Z"}
+{"level":"warn","message":"Warehouse routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.661Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.662Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.662Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.664Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.665Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.665Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:19.665Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.886Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.888Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.889Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.889Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.891Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.891Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.892Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T02:57:34.892Z"}
+{"level":"info","message":"Shipping order created: PI2025TEST002","partsNumber":"ENG-TRE-001","serialNumber":"SN1000-97","service":"warehouse-picker-api","timestamp":"2025-06-13T02:59:34.678Z","weight":1000}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T03:11:14.573Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.355Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.358Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.358Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.358Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.361Z"}
+{"level":"info","message":"📊 Health check: http://localhost:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.361Z"}
+{"level":"info","message":"🧪 Test endpoint: http://localhost:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.362Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:12:35.362Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T03:14:29.914Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.896Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.899Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.899Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.899Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.902Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.903Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.903Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:15:00.903Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.448Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.451Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.451Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.451Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.454Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.454Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.455Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:16:51.455Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.969Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.971Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.972Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.972Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.975Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.975Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.976Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:17:13.976Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.978Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.981Z"}
+{"level":"warn","message":"Verification routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.981Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.981Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.984Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.984Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.984Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:11.985Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.865Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.868Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.869Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.870Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.872Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.873Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.873Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:21:18.873Z"}
+{"level":"info","message":"Shipping order created: PI2025TEST003","partsNumber":"TABBY-FOOD-01","serialNumber":"CAT010101","service":"warehouse-picker-api","timestamp":"2025-06-13T03:36:48.288Z","weight":4.5}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:51.923Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.417Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.419Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.420Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.420Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.424Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.424Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.424Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T03:59:55.424Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.859Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.861Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.863Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.863Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3100","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.876Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3100/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.876Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3100/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.876Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T04:42:52.876Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:30.847Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.663Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.667Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.669Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.669Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.681Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.682Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.682Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T04:57:41.682Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:38.686Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.314Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.316Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.318Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.318Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.331Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.331Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.332Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T07:57:44.332Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:01.626Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.787Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.790Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.792Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.792Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.804Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.805Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.805Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T08:09:04.805Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:25.213Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.174Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.177Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.177Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.178Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.180Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.180Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.193Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.194Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.194Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:28.194Z"}
+{"customer":"EVA","destination":"TPE","level":"info","message":"Forwarder selected: MNX","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:16:51.851Z"}
+{"customer":"JAL","destination":"HND","level":"info","message":"Forwarder selected: Sterling","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:22:51.120Z"}
+{"customer":"EVA","destination":"TPE","level":"info","message":"Forwarder selected: MNX","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:30:56.511Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:25.650Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.506Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.508Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.510Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.511Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.512Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.513Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.525Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.525Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.525Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:29.525Z"}
+{"customer":"1EGEVA","destination":"TPE","level":"info","message":"Forwarder selected: MNX","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:32:44.268Z"}
+{"customer":"ACA","destination":"YUL","level":"info","message":"Forwarder selected: DHL Express","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:39:20.483Z"}
+{"customer":"ACA","destination":"YUL","level":"info","message":"Forwarder selected: DHL Express","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:41:06.658Z"}
+{"customer":"ACA","destination":"YUL","level":"info","message":"Forwarder selected: DHL Express","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:41:17.934Z"}
+{"customer":"ACA","destination":"YUL","level":"info","message":"Forwarder selected: DHL Express","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:41:59.725Z"}
+{"customer":"DLHLDC","destination":"FRA","level":"info","message":"Forwarder selected: UPS SAVER","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:42:31.837Z"}
+{"customer":"DLHLDC","destination":"FRA","level":"info","message":"Forwarder selected: UPS SAVER","priority":"B","service":"warehouse-picker-api","timestamp":"2025-06-13T08:44:21.472Z"}
+{"customer":"JAL","destination":"HND","level":"info","message":"Forwarder selected: Sterling","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:44:30.771Z"}
+{"customer":"JAL","destination":"HND","level":"info","message":"Forwarder selected: Sterling","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T08:47:17.786Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.041Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.044Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.044Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.046Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.047Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.048Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.060Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.061Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.061Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T08:50:00.061Z"}
+{"level":"info","message":"Shipping order created: 552530","partsNumber":"MTQ53CH/A","serialNumber":"JGPD40DH6L","service":"warehouse-picker-api","timestamp":"2025-06-13T08:57:13.363Z","weight":0.5}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:28.423Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.249Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.251Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.252Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.254Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.256Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.257Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.269Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.269Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.270Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T09:11:32.270Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:43.347Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.027Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.030Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.031Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.033Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.034Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.035Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.047Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.048Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.048Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T09:15:47.048Z"}
+{"customer":"CAL","destination":"TPE","level":"info","message":"Forwarder selected: MNX","priority":"A","service":"warehouse-picker-api","timestamp":"2025-06-13T09:20:28.381Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"warehouse-picker-api","timestamp":"2025-06-13T09:24:02.805Z"}
+{"level":"info","message":"Forwarder routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.309Z"}
+{"level":"info","message":"Booking routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.312Z"}
+{"level":"warn","message":"Selector routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.312Z"}
+{"level":"info","message":"Warehouse routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.314Z"}
+{"level":"info","message":"Verification routes loaded","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.317Z"}
+{"level":"warn","message":"Dashboard routes not found, skipping...","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.317Z"}
+{"level":"info","message":"🚀 Warehouse Picker API server running on port 3000","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.330Z"}
+{"level":"info","message":"📊 Health check: http://0.0.0.0:3000/api/health","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.331Z"}
+{"level":"info","message":"🧪 Test endpoint: http://0.0.0.0:3000/api/test","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.331Z"}
+{"level":"info","message":"🌍 Environment: development","service":"warehouse-picker-api","timestamp":"2025-06-13T09:27:53.331Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:28:05.957Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:28:06.895Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:28:35.977Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:29:05.980Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:29:35.983Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:30:05.990Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:30:35.994Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Error fetching shipping orders:","service":"warehouse-picker-api","stack":"Error\n    at PromisePool.execute (C:\\Users\\ross\\picker-system\\node_modules\\mysql2\\lib\\promise\\pool.js:54:22)\n    at C:\\Users\\ross\\picker-system\\routes\\warehouse.js:174:35\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\ross\\picker-system\\node_modules\\express\\lib\\router\\index.js:175:3)","timestamp":"2025-06-13T09:31:06.370Z"}

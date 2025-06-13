@@ -1,0 +1,259 @@
+const express = require('express');
+const router = express.Router();
+const {
+    verifyQRCode,
+    getVerificationHistory,
+    updatePickingStatus
+} = require('../controllers/verificationController');
+
+// @route   GET /api/verification/:qrCodeId
+// @desc    Verify QR code and get picker details
+// @access  Public
+router.get('/:qrCodeId', verifyQRCode);
+
+// @route   POST /api/verification/confirm
+// @desc    Confirm pickup and update status
+// @access  Public
+router.post('/confirm', updatePickingStatus);
+
+// @route   GET /api/verification/history/:piNumber
+// @desc    Get verification history for PI number
+// @access  Public
+router.get('/history/:piNumber', getVerificationHistory);
+
+module.exports = router;
+
+// ==========================================
+// 8. VERIFICATION CONTROLLER (controllers/verificationController.js)
+// ==========================================
+
+const pool = require('../config/database');
+const logger = require('../utils/logger');
+
+// Verify QR Code
+const verifyQRCode = async (req, res) => {
+    const connection = await pool.getConnection();
+    
+    try {
+        const { qrCodeId } = req.params;
+        
+        // Get picker and shipping order data
+        const [rows] = await connection.execute(`
+            SELECT p.*, s.parts_number, s.serial_number, s.weight_kg,
+                   s.length_cm, s.width_cm, s.height_cm, s.picking_status,
+                   s.picking_time, s.created_time
+            FROM pickers p
+            LEFT JOIN shipping_orders s ON p.pi_number = s.pi_number
+            WHERE p.qr_code_id = ?
+        `, [qrCodeId]);
+        
+        if (rows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: 'Invalid QR code or picker not found'
+            });
+        }
+        
+        const picker = rows[0];
+        
+        // Check if QR code is expired (24 hours)
+        const registrationTime = new Date(picker.registration_time);
+        const expiryTime = new Date(registrationTime.getTime() + 24 * 60 * 60 * 1000);
+        const now = new Date();
+        
+        if (now > expiryTime) {
+            // Update picker status to expired
+            await connection.execute(
+                'UPDATE pickers SET status = ? WHERE qr_code_id = ?',
+                ['expired', qrCodeId]
+            );
+            
+            return res.status(410).json({
+                success: false,
+                message: 'QR code has expired',
+                data: {
+                    expiryTime: expiryTime.toISOString()
+                }
+            });
+        }
+        
+        // Log verification attempt
+        await connection.execute(`
+            INSERT INTO verification_logs (
+                qr_code_id, pi_number, verification_time, 
+                verification_status, notes
+            ) VALUES (?, ?, NOW(), 'approved', 'QR code verified successfully')
+        `, [qrCodeId, picker.pi_number]);
+        
+        logger.info(`QR code verified: ${qrCodeId}`, {
+            piNumber: picker.pi_number,
+            pickerName: picker.picker_name
+        });
+        
+        res.json({
+            success: true,
+            message: 'Picker verified successfully',
+            data: {
+                picker: {
+                    pickerId: picker.picker_id,
+                    forwarderName: picker.forwarder_name,
+                    piNumber: picker.pi_number,
+                    pickerName: picker.picker_name,
+                    pickerContact: picker.picker_contact,
+                    hkidNumber: picker.hkid_number,
+                    carPlate: picker.car_plate_number,
+                    qrCodeId: picker.qr_code_id,
+                    registrationTime: picker.registration_time,
+                    status: picker.status
+                },
+                shippingOrder: picker.parts_number ? {
+                    partsNumber: picker.parts_number,
+                    serialNumber: picker.serial_number,
+                    weight: picker.weight_kg,
+                    dimensions: {
+                        length: picker.length_cm,
+                        width: picker.width_cm,
+                        height: picker.height_cm
+                    },
+                    pickingStatus: picker.picking_status,
+                    pickingTime: picker.picking_time,
+                    createdTime: picker.created_time
+                } : null,
+                verification: {
+                    verificationTime: new Date().toISOString(),
+                    expiryTime: expiryTime.toISOString(),
+                    isValid: true
+                }
+            }
+        });
+        
+    } catch (error) {
+        logger.error('Error verifying QR code:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to verify QR code'
+        });
+    } finally {
+        connection.release();
+    }
+};
+
+// Update Picking Status
+const updatePickingStatus = async (req, res) => {
+    const connection = await pool.getConnection();
+    
+    try {
+        await connection.beginTransaction();
+        
+        const { qrCodeId, gateOperator, notes } = req.body;
+        
+        // Get picker info
+        const [pickerRows] = await connection.execute(
+            'SELECT pi_number FROM pickers WHERE qr_code_id = ?',
+            [qrCodeId]
+        );
+        
+        if (pickerRows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: 'Picker not found'
+            });
+        }
+        
+        const piNumber = pickerRows[0].pi_number;
+        
+        // Update shipping order status
+        await connection.execute(`
+            UPDATE shipping_orders 
+            SET picking_status = 'completed', picking_time = NOW()
+            WHERE pi_number = ?
+        `, [piNumber]);
+        
+        // Update picker status
+        await connection.execute(
+            'UPDATE pickers SET status = ? WHERE qr_code_id = ?',
+            ['verified', qrCodeId]
+        );
+        
+        // Log the confirmation
+        await connection.execute(`
+            INSERT INTO verification_logs (
+                qr_code_id, pi_number, verification_time,
+                gate_operator, verification_status, notes
+            ) VALUES (?, ?, NOW(), ?, 'approved', ?)
+        `, [qrCodeId, piNumber, gateOperator || 'System', notes || 'Pickup confirmed']);
+        
+        await connection.commit();
+        
+        logger.info(`Pickup confirmed: ${qrCodeId}`, {
+            piNumber,
+            gateOperator
+        });
+        
+        res.json({
+            success: true,
+            message: 'Pickup confirmed successfully',
+            data: {
+                piNumber,
+                qrCodeId,
+                confirmationTime: new Date().toISOString(),
+                status: 'completed'
+            }
+        });
+        
+    } catch (error) {
+        await connection.rollback();
+        logger.error('Error confirming pickup:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to confirm pickup'
+        });
+    } finally {
+        connection.release();
+    }
+};
+
+// Get Verification History
+const getVerificationHistory = async (req, res) => {
+    try {
+        const { piNumber } = req.params;
+        
+        const [rows] = await pool.execute(`
+            SELECT vl.*, p.picker_name, p.forwarder_name
+            FROM verification_logs vl
+            JOIN pickers p ON vl.qr_code_id = p.qr_code_id
+            WHERE vl.pi_number = ?
+            ORDER BY vl.verification_time DESC
+        `, [piNumber]);
+        
+        res.json({
+            success: true,
+            data: {
+                piNumber,
+                verificationHistory: rows.map(log => ({
+                    logId: log.log_id,
+                    qrCodeId: log.qr_code_id,
+                    verificationTime: log.verification_time,
+                    gateOperator: log.gate_operator,
+                    status: log.verification_status,
+                    notes: log.notes,
+                    pickerName: log.picker_name,
+                    forwarderName: log.forwarder_name
+                }))
+            }
+        });
+        
+    } catch (error) {
+        logger.error('Error fetching verification history:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to fetch verification history'
+        });
+    }
+};
+
+module.exports = {
+    verifyQRCode,
+    updatePickingStatus,
+    getVerificationHistory
+};

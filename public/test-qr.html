@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Test</title>
+</head>
+<body>
+    <h1>QR Code Test</h1>
+    <canvas id="canvas"></canvas>
+    <script src="https://app.unpkg.com/qrcode-generator@1.4.4/files/qrcode.js"></script>
+    <script>
+        console.log('QRCode:', typeof QRCode);
+        QRCode.toCanvas(document.getElementById('canvas'), 'Test QR Code', function(error) {
+            if (error) console.error(error);
+            else console.log('Success!');
+        });
+    </script>
+</body>
+</html>

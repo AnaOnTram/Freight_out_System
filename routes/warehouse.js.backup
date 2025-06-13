@@ -1,0 +1,31 @@
+const express = require('express');
+const router = express.Router();
+const {
+    createShippingOrder,
+    updateShippingOrder,
+    getShippingOrder,
+    getAllShippingOrders
+} = require('../controllers/warehouseController');
+const { validateShippingOrder } = require('../middleware/validation');
+
+// @route   POST /api/warehouse/shipping-order
+// @desc    Create new shipping order
+// @access  Public (add auth as needed)
+router.post('/shipping-order', validateShippingOrder, createShippingOrder);
+
+// @route   PUT /api/warehouse/shipping-order/:piNumber
+// @desc    Update shipping order
+// @access  Public
+router.put('/shipping-order/:piNumber', validateShippingOrder, updateShippingOrder);
+
+// @route   GET /api/warehouse/shipping-order/:piNumber
+// @desc    Get shipping order by PI number
+// @access  Public
+router.get('/shipping-order/:piNumber', getShippingOrder);
+
+// @route   GET /api/warehouse/shipping-orders
+// @desc    Get all shipping orders with pagination
+// @access  Public
+router.get('/shipping-orders', getAllShippingOrders);
+
+module.exports = router;

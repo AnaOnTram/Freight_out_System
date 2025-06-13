@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forwarder Portal - Picker Registration</title>
+    <!-- Remove the QR code script tag completely -->
+    <style>
+        /* Keep all your existing CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .forwarder-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 12px 15px;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            background: #e8f2ff;
+            border-color: #4f5fd6;
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            margin: 10px;
+            width: auto;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .qr-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            border: 3px solid #28a745;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .qr-container h3 {
+            color: #28a745;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .qr-details {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .qr-details h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-item strong {
+            color: #333;
+        }
+
+        .security-notice {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #f1c40f;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .security-notice h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2196f3;
+        }
+
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            color: #424242;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .forwarder-card {
+                padding: 20px;
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .qr-image {
+            border: 3px solid #28a745;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="AOC.png" style="max-width: 30%; height: auto;">
+            <h1>🚛 Forwarder Portal</h1>
+            <p>Secure Picker Registration for Aircraft Parts Warehouse</p>
+        </div>
+
+        <div class="forwarder-card">
+            <div class="instructions">
+                <h3>📋 Registration Instructions</h3>
+                <ul>
+                    <li>All fields marked with <span class="required">*</span> are mandatory</li>
+                    <li>HKID number must be in format: A1234567 or AB123456</li>
+                    <li>Upload clear image or PDF scan of HKID document</li>
+                    <li>Ensure picker contact number is reachable</li>
+                    <li>Car license plate is optional but recommended</li>
+                    <li>QR code will be generated after successful registration</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">
+                📝 Register New Picker
+            </h2>
+            
+            <div id="forwarder-alert"></div>
+            
+            <form id="forwarder-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="forwarder-name">Forwarder Company Name <span class="required">*</span></label>
+                        <input type="text" id="forwarder-name" required placeholder="Enter your company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pi-number">PI Number <span class="required">*</span></label>
+                        <input type="text" id="pi-number" required placeholder="Enter PI number">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="picker-name">Picker Full Name <span class="required">*</span></label>
+                        <input type="text" id="picker-name" required placeholder="Enter picker's full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="picker-contact">Picker Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="picker-contact" required placeholder="e.g. +852 9123 4567">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hkid-number">HKID Number <span class="required">*</span></label>
+                        <input type="text" id="hkid-number" required placeholder="e.g. A1234567 or AB123456" pattern="[A-Z]{1,2}[0-9]{6,7}">
+                    </div>
+                    <div class="form-group">
+                        <label for="car-plate">Car License Plate (Optional)</label>
+                        <input type="text" id="car-plate" placeholder="e.g. ABC123 or XY1234">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="id-document">HKID Document (Image/PDF) <span class="required">*</span></label>
+                    <div class="file-upload">
+                        <input type="file" id="id-document" accept="image/*,.pdf" required>
+                        <label for="id-document" class="file-upload-label">
+                            📄 Click to upload HKID image or PDF scan
+                        </label>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Registering picker and generating QR code...</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    🔐 Register Picker & Generate QR Code
+                </button>
+            </form>
+
+            <div class="security-notice">
+                <h4>🔒 Security Notice</h4>
+                <p>All uploaded documents are securely processed. QR codes expire after 24 hours and are unique to each picker registration.</p>
+            </div>
+
+            <div id="qr-result" style="display: none;">
+                <div class="qr-container">
+                    <h3>✅ Picker Registered Successfully!</h3>
+                    
+                    <div class="qr-details">
+                        <h4>📱 QR Code for Gate Verification</h4>
+                        <img id="qr-image" class="qr-image" alt="QR Code" />
+                        <br>
+                        <button onclick="downloadQRCode()" class="btn btn-download">
+                            📥 Download QR Code PNG
+                        </button>
+                        <button onclick="printQRCode()" class="btn btn-download">
+                            🖨️ Print QR Code
+                        </button>
+                    </div>
+
+                    <div class="qr-details">
+                        <h4>📋 Registration Summary</h4>
+                        <div class="info-grid" id="registration-summary">
+                        </div>
+                    </div>
+
+                    <div class="qr-details">
+                        <h4>🔗 Verification Details</h4>
+                        <p><strong>QR Code ID:</strong> <span id="qr-code-id"></span></p>
+                        <p><strong>Verification URL:</strong> <span id="verification-url"></span></p>
+                        <p><strong>Valid Until:</strong> <span id="expiry-time"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE_URL = '/api';
+        
+        // Global variables
+        let currentRegistrationData = null;
+
+        // Initialize the application
+        function init() {
+            // Add real-time validation
+            document.getElementById('hkid-number').addEventListener('input', validateHKID);
+            document.getElementById('picker-contact').addEventListener('input', validateContact);
+            
+            // File upload handler
+            document.getElementById('id-document').addEventListener('change', handleFileUpload);
+        }
+
+        // HKID validation
+        function validateHKID(e) {
+            const hkid = e.target.value.toUpperCase();
+            const pattern = /^[A-Z]{1,2}[0-9]{6,7}$/;
+            
+            if (hkid && !pattern.test(hkid)) {
+                e.target.style.borderColor = '#e74c3c';
+                e.target.style.background = '#fff5f5';
+            } else {
+                e.target.style.borderColor = '#28a745';
+                e.target.style.background = '#f0fff4';
+            }
+        }
+
+        // Contact validation
+        function validateContact(e) {
+            const contact = e.target.value;
+            const pattern = /^(\+852\s?)?[0-9]{8}$|^(\+852\s?)?[0-9]{4}\s?[0-9]{4}$/;
+            
+            if (contact && !pattern.test(contact)) {
+                e.target.style.borderColor = '#f39c12';
+                e.target.style.background = '#fffbf0';
+            } else {
+                e.target.style.borderColor = '#28a745';
+                e.target.style.background = '#f0fff4';
+            }
+        }
+
+        // File upload handler
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            const label = document.querySelector('.file-upload-label');
+            
+            if (file) {
+                // Validate file size (10MB max)
+                if (file.size > 10 * 1024 * 1024) {
+                    showAlert('error', 'File size too large. Please upload a file smaller than 10MB.');
+                    e.target.value = '';
+                    label.textContent = '📄 Click to upload HKID image or PDF scan';
+                    return;
+                }
+                
+                // Validate file type
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
+                if (!allowedTypes.includes(file.type)) {
+                    showAlert('error', 'Invalid file type. Please upload JPEG, PNG, or PDF files only.');
+                    e.target.value = '';
+                    label.textContent = '📄 Click to upload HKID image or PDF scan';
+                    return;
+                }
+                
+                label.textContent = `📄 ${file.name}`;
+                label.style.borderColor = '#28a745';
+                label.style.background = '#f0fff4';
+            } else {
+                label.textContent = '📄 Click to upload HKID image or PDF scan';
+                label.style.borderColor = '#667eea';
+                label.style.background = '#f8f9fa';
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('forwarder-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const loadingDiv = document.getElementById('loading');
+            
+            // Disable submit button and show loading
+            submitBtn.disabled = true;
+            loadingDiv.style.display = 'block';
+            
+            try {
+                // Prepare form data
+                const formData = new FormData();
+                formData.append('forwarderName', document.getElementById('forwarder-name').value.trim());
+                formData.append('piNumber', document.getElementById('pi-number').value.trim());
+                formData.append('pickerName', document.getElementById('picker-name').value.trim());
+                formData.append('pickerContact', document.getElementById('picker-contact').value.trim());
+                formData.append('hkidNumber', document.getElementById('hkid-number').value.trim().toUpperCase());
+                formData.append('carPlate', document.getElementById('car-plate').value.trim());
+                
+                const fileInput = document.getElementById('id-document');
+                if (fileInput.files[0]) {
+                    formData.append('idDocument', fileInput.files[0]);
+                }
+                
+                // Submit to API
+                const response = await fetch(`${API_BASE_URL}/forwarder/register-picker`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Store registration data
+                    currentRegistrationData = {
+                        forwarderName: formData.get('forwarderName'),
+                        piNumber: formData.get('piNumber'),
+                        pickerName: formData.get('pickerName'),
+                        pickerContact: formData.get('pickerContact'),
+                        hkidNumber: formData.get('hkidNumber'),
+                        carPlate: formData.get('carPlate') || 'Not provided',
+                        qrCodeId: result.data.qrCodeId,
+                        registrationTime: result.data.registrationTime,
+                        expiryTime: result.data.expiryTime,
+                        documentName: fileInput.files[0] ? fileInput.files[0].name : 'No document',
+                        qrCodeBase64: result.data.qrCodeBase64,
+                        verificationUrl: result.data.verificationUrl
+                    };
+                    
+                    // Display QR code from server
+                    displayQRCode();
+                    
+                    showAlert('success', '✅ Picker registered successfully! QR code generated and ready for download.');
+                    
+                    // Reset form
+                    this.reset();
+                    resetFieldStyles();
+                    document.querySelector('.file-upload-label').textContent = '📄 Click to upload HKID image or PDF scan';
+                    
+                } else {
+                    throw new Error(result.message || 'Registration failed');
+                }
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                showAlert('error', `Registration failed: ${error.message}`);
+            } finally {
+                // Re-enable submit button and hide loading
+                submitBtn.disabled = false;
+                loadingDiv.style.display = 'none';
+            }
+        });
+
+        // Display QR Code (no external library needed!)
+        function displayQRCode() {
+            const qrImage = document.getElementById('qr-image');
+            
+            // Set the QR code image from base64 data
+            qrImage.src = currentRegistrationData.qrCodeBase64;
+            
+            // Update display elements
+            document.getElementById('qr-code-id').textContent = currentRegistrationData.qrCodeId;
+            document.getElementById('verification-url').textContent = currentRegistrationData.verificationUrl;
+            document.getElementById('expiry-time').textContent = new Date(currentRegistrationData.expiryTime).toLocaleString();
+            
+            // Update registration summary
+            displayRegistrationSummary();
+            
+            // Show result
+            document.getElementById('qr-result').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('qr-result').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Display registration summary
+        function displayRegistrationSummary() {
+            const summaryContainer = document.getElementById('registration-summary');
+            
+            summaryContainer.innerHTML = `
+                <div class="info-item">
+                    <strong>Forwarder:</strong><br>${currentRegistrationData.forwarderName}
+                </div>
+                <div class="info-item">
+                    <strong>PI Number:</strong><br>${currentRegistrationData.piNumber}
+                </div>
+                <div class="info-item">
+                    <strong>Picker Name:</strong><br>${currentRegistrationData.pickerName}
+                </div>
+                <div class="info-item">
+                    <strong>Contact:</strong><br>${currentRegistrationData.pickerContact}
+                </div>
+                <div class="info-item">
+                    <strong>HKID:</strong><br>${currentRegistrationData.hkidNumber}
+                </div>
+                <div class="info-item">
+                    <strong>Car Plate:</strong><br>${currentRegistrationData.carPlate}
+                </div>
+                <div class="info-item">
+                    <strong>Document:</strong><br>${currentRegistrationData.documentName}
+                </div>
+                <div class="info-item">
+                    <strong>Registration:</strong><br>${new Date(currentRegistrationData.registrationTime).toLocaleString()}
+                </div>
+            `;
+        }
+
+        // Download QR Code as PNG
+        function downloadQRCode() {
+            if (!currentRegistrationData || !currentRegistrationData.qrCodeBase64) {
+                showAlert('error', 'No QR code available for download.');
+                return;
+            }
+            
+            try {
+                // Create a link to download the base64 image
+                const link = document.createElement('a');
+                link.download = `QR_${currentRegistrationData.qrCodeId}_${currentRegistrationData.piNumber}.png`;
+                link.href = currentRegistrationData.qrCodeBase64;
+                link.click();
+                
+                showAlert('success', '📥 QR Code PNG file downloaded successfully!');
+                
+            } catch (error) {
+                console.error('Download failed:', error);
+                showAlert('error', 'Failed to download QR code. Please try again.');
+            }
+        }
+
+        // Print QR Code
+        function printQRCode() {
+            if (!currentRegistrationData || !currentRegistrationData.qrCodeBase64) {
+                showAlert('error', 'No QR code available for printing.');
+                return;
+            }
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Print QR Code - ${currentRegistrationData.piNumber}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+                        .qr-container { border: 2px solid #333; padding: 20px; display: inline-block; }
+                        .details { margin-top: 20px; text-align: left; }
+                        .details div { margin: 5px 0; }
+                        h1 { color: #333; margin-bottom: 20px; }
+                        .qr-id { font-weight: bold; color: #667eea; margin: 10px 0; }
+                        .expiry { color: #e74c3c; font-size: 14px; margin-top: 15px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>🚛 Warehouse Picker Verification QR Code</h1>
+                    <div class="qr-container">
+                        <img src="${currentRegistrationData.qrCodeBase64}" alt="QR Code" />
+                        <div class="details">
+                            <div><strong>Forwarder:</strong> ${currentRegistrationData.forwarderName}</div>
+                            <div><strong>PI Number:</strong> ${currentRegistrationData.piNumber}</div>
+                            <div><strong>Picker:</strong> ${currentRegistrationData.pickerName}</div>
+                            <div><strong>Contact:</strong> ${currentRegistrationData.pickerContact}</div>
+                            <div><strong>HKID:</strong> ${currentRegistrationData.hkidNumber}</div>
+                            <div><strong>Car Plate:</strong> ${currentRegistrationData.carPlate}</div>
+                            <div class="qr-id">QR ID: ${currentRegistrationData.qrCodeId}</div>
+                            <div class="expiry">Valid until: ${new Date(currentRegistrationData.expiryTime).toLocaleString()}</div>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        // Reset form field styles
+        function resetFieldStyles() {
+            document.querySelectorAll('input, select, textarea').forEach(element => {
+                element.style.borderColor = '#e1e5e9';
+                element.style.background = '#f8f9fa';
+            });
+            
+            const fileLabel = document.querySelector('.file-upload-label');
+            fileLabel.style.borderColor = '#667eea';
+            fileLabel.style.background = '#f8f9fa';
+        }
+
+        // Show alert function
+        function showAlert(type, message) {
+            const container = document.getElementById('forwarder-alert');
+            container.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            
+            // Auto-hide after 6 seconds
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 6000);
+            
+            // Scroll to alert
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Initialize application
+        init();
+    </script>
+</body>
+</html>
