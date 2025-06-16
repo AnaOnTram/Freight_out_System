@@ -1,6 +1,25 @@
 # Warehouse System
+## System Requirements
+1. Node.JS
+2. MySQL or Other similar database
 ## System Structure
 The system contains three levels of services: 1. The database to support the operation; 2. The backend javascript to handle API calls; 3. The front-end html file to enable GUI.
+## Import the database schema
+```bash
+cd where_you_download_the_repo/Freight_out_System
+mysql -u <your_user_name> -p warehouse_picker_system < warehouse_picker_system.sql
+```
+You can verify the import from running following sql command
+```sql
+#login to the database user
+mysql -u root -p
+SHOW DATABASES;
+#you should see a database named warehouse_picker_system
+USE warehouse_picker_system;
+SHOW TABLES;
+DESCRIBE forwarders;
+SELECT * FROM forwarders;
+```
 ## Database Structure
 To login into the database. First open a command prompt.
 ```shell
