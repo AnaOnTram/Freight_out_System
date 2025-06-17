@@ -88,6 +88,28 @@
             gap: 10px;
         }
 
+        .special-remarks-btn {
+            margin-left: auto;
+            padding: 8px 12px;
+            background: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .special-remarks-btn:hover {
+            background: #ffb300;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
@@ -131,6 +153,31 @@
             background: white;
             box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.1);
             transform: translateY(-2px);
+        }
+
+        .input-with-status {
+            position: relative;
+        }
+
+        .input-status {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        .input-status.loading::after {
+            content: "⏳";
+        }
+
+        .input-status.success::after {
+            content: "✅";
+        }
+
+        .input-status.error::after {
+            content: "❌";
         }
 
         .radio-group {
@@ -188,6 +235,16 @@
             color: white;
         }
 
+        .btn-info {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+            color: #000;
+        }
+
         .alert {
             padding: 15px;
             border-radius: 10px;
@@ -206,6 +263,18 @@
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
         }
 
         .loading {
@@ -257,6 +326,9 @@
             padding: 10px 15px;
             cursor: pointer;
             border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .autocomplete-suggestion:hover {
@@ -265,6 +337,23 @@
 
         .autocomplete-suggestion.active {
             background: #17a2b8;
+            color: white;
+        }
+
+        .suggestion-main {
+            flex: 1;
+        }
+
+        .suggestion-code {
+            font-size: 12px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .autocomplete-suggestion.active .suggestion-code {
+            background: rgba(255,255,255,0.2);
             color: white;
         }
 
@@ -286,7 +375,7 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            max-width: 600px;
+            max-width: 800px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
@@ -343,6 +432,71 @@
             flex: 1;
         }
 
+        .special-remarks-content {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #17a2b8;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .special-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+
+        .special-item {
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 10px;
+        }
+
+        .special-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .special-item strong {
+            color: #17a2b8;
+        }
+
+        .special-item .count {
+            background: #17a2b8;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -365,6 +519,10 @@
             .modal-actions {
                 flex-direction: column;
             }
+
+            .summary-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -379,6 +537,9 @@
         <div class="selector-card">
             <h2 class="section-title">
                 🔍 Search Forwarder
+                <button class="special-remarks-btn" onclick="showSpecialRemarks()">
+                    ⚠️ Special Cases
+                </button>
             </h2>
             
             <div id="alert-container"></div>
@@ -388,14 +549,20 @@
                     <div class="form-group">
                         <label for="dest-input">Destination <span class="required">*</span></label>
                         <div class="autocomplete-container">
-                            <input type="text" id="dest-input" required placeholder="Enter destination..." autocomplete="off">
+                            <div class="input-with-status">
+                                <input type="text" id="dest-input" required placeholder="Enter city name or airport code..." autocomplete="off">
+                                <div class="input-status" id="dest-status"></div>
+                            </div>
                             <div class="autocomplete-suggestions" id="dest-suggestions"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="customer-input">Customer <span class="required">*</span></label>
                         <div class="autocomplete-container">
-                            <input type="text" id="customer-input" required placeholder="Enter customer..." autocomplete="off">
+                            <div class="input-with-status">
+                                <input type="text" id="customer-input" required placeholder="Select destination first..." autocomplete="off">
+                                <div class="input-status" id="customer-status"></div>
+                            </div>
                             <div class="autocomplete-suggestions" id="customer-suggestions"></div>
                         </div>
                     </div>
@@ -467,93 +634,103 @@
         </div>
     </div>
 
+    <!-- Special Remarks Modal -->
+    <div id="special-remarks-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-header">⚠️ Special Cases & Unmapped Destinations</h3>
+            <div id="special-remarks-body" class="special-remarks-content">
+                <div class="loading" style="display: block;">
+                    <div class="spinner"></div>
+                    <p>Loading special cases...</p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeSpecialRemarksModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Configuration - Choose the correct API endpoints based on your server setup
+        // Configuration
         const API_BASE_URL = '/api';
         
-        // Option 1: If using the NEW booking.js routes I provided
+        // API endpoints
         const API_ENDPOINTS = {
-            options: `${API_BASE_URL}/booking/options`,
-            forwarder: `${API_BASE_URL}/booking/forwarder`
+            destinations: `${API_BASE_URL}/booking/destinations`,
+            customersByDestination: `${API_BASE_URL}/booking/customers-by-destination`,
+            forwarder: `${API_BASE_URL}/booking/forwarder`,
+            specialRemarks: `${API_BASE_URL}/booking/special-remarks`
         };
-        
-        // Option 2: If using the ORIGINAL selector routes  
-        // const API_ENDPOINTS = {
-        //     options: `${API_BASE_URL}/selector/options`, 
-        //     forwarder: `${API_BASE_URL}/selector`
-        // };
 
         // Global variables
         let currentSelection = null;
         let selectionHistory = [];
-        let autocompleteData = { destinations: [], customers: [] };
+        let destinationsData = [];
+        let currentDestinationCustomers = [];
+        let destinationSelected = false;
 
         // Helper functions
         const up = s => (s || "").trim().toUpperCase();
 
         // Initialize the application
         function init() {
-            loadAutocompleteData();
+            loadDestinations();
             
             // Add form submission handler
             document.getElementById('selector-form').addEventListener('submit', searchForwarder);
             
-            // Set up autocomplete
-            setupAutocomplete();
+            // Set up destination input handlers
+            setupDestinationInput();
+            
+            // Set up customer input handlers
+            setupCustomerInput();
         }
 
-        // Load autocomplete data
-        async function loadAutocompleteData() {
+        // Load destinations for blur search
+        async function loadDestinations(query = '') {
             try {
-                const response = await fetch(API_ENDPOINTS.options);
+                const url = query ? `${API_ENDPOINTS.destinations}?query=${encodeURIComponent(query)}` : API_ENDPOINTS.destinations;
+                const response = await fetch(url);
                 const result = await response.json();
                 
                 if (result.success) {
-                    autocompleteData = result.data;
-                    setupAutocomplete();
+                    destinationsData = result.data.destinations || [];
+                    console.log(`✅ Loaded ${destinationsData.length} destinations`);
                 } else {
-                    console.warn('Failed to load autocomplete data:', result.message);
+                    console.warn('Failed to load destinations:', result.message);
+                    showAlert('error', 'Failed to load destinations. Please try refreshing the page.');
                 }
             } catch (error) {
-                console.error('Autocomplete data error:', error);
-                showAlert('error', 'Failed to load autocomplete data. Please check if the server is running.');
+                console.error('Destinations loading error:', error);
+                showAlert('error', 'Failed to load destinations. Please check if the server is running.');
             }
         }
 
-        // Setup autocomplete functionality
-        function setupAutocomplete() {
-            setupAutocompleteField('dest-input', 'dest-suggestions', autocompleteData.destinations || []);
-            setupAutocompleteField('customer-input', 'customer-suggestions', autocompleteData.customers || []);
-        }
-
-        function setupAutocompleteField(inputId, suggestionsId, data) {
-            const input = document.getElementById(inputId);
-            const suggestions = document.getElementById(suggestionsId);
+        // Setup destination input with blur search
+        function setupDestinationInput() {
+            const input = document.getElementById('dest-input');
+            const suggestions = document.getElementById('dest-suggestions');
+            const status = document.getElementById('dest-status');
             
-            if (!input || !suggestions || !data.length) return;
-
+            let debounceTimer;
+            
             input.addEventListener('input', function() {
-                const value = this.value.toLowerCase();
+                clearTimeout(debounceTimer);
+                const value = this.value.toLowerCase().trim();
                 
                 if (value.length === 0) {
                     suggestions.style.display = 'none';
+                    status.className = 'input-status';
+                    destinationSelected = false;
+                    resetCustomerInput();
                     return;
                 }
 
-                const filtered = data.filter(item => 
-                    item.toLowerCase().includes(value)
-                ).slice(0, 10);
-
-                if (filtered.length === 0) {
-                    suggestions.style.display = 'none';
-                    return;
-                }
-
-                suggestions.innerHTML = filtered.map(item => 
-                    `<div class="autocomplete-suggestion" onclick="selectSuggestion('${inputId}', '${suggestionsId}', '${item}')">${item}</div>`
-                ).join('');
+                status.className = 'input-status loading';
                 
-                suggestions.style.display = 'block';
+                debounceTimer = setTimeout(() => {
+                    showDestinationSuggestions(value);
+                }, 300);
             });
 
             input.addEventListener('blur', function() {
@@ -570,9 +747,271 @@
             });
         }
 
-        function selectSuggestion(inputId, suggestionsId, value) {
-            document.getElementById(inputId).value = value;
-            document.getElementById(suggestionsId).style.display = 'none';
+        // Show destination suggestions
+        function showDestinationSuggestions(query) {
+            const suggestions = document.getElementById('dest-suggestions');
+            const status = document.getElementById('dest-status');
+            
+            const filtered = destinationsData.filter(dest => 
+                dest.display.toLowerCase().includes(query) ||
+                dest.code.toLowerCase().includes(query) ||
+                (dest.city && dest.city.toLowerCase().includes(query))
+            ).slice(0, 10);
+
+            if (filtered.length === 0) {
+                suggestions.style.display = 'none';
+                status.className = 'input-status error';
+                return;
+            }
+
+            status.className = 'input-status success';
+
+            suggestions.innerHTML = filtered.map(dest => 
+                `<div class="autocomplete-suggestion" onclick="selectDestination('${dest.code}', '${dest.display.replace(/'/g, "\\'")}')">
+                    <div class="suggestion-main">${dest.display}</div>
+                    <div class="suggestion-code">${dest.code}</div>
+                </div>`
+            ).join('');
+            
+            suggestions.style.display = 'block';
+        }
+
+        // Select destination from suggestions
+        function selectDestination(code, display) {
+            const input = document.getElementById('dest-input');
+            const suggestions = document.getElementById('dest-suggestions');
+            const status = document.getElementById('dest-status');
+            
+            input.value = code; // Store the IATA code as the value
+            suggestions.style.display = 'none';
+            status.className = 'input-status success';
+            destinationSelected = true;
+            
+            // Load customers for selected destination
+            loadCustomersByDestination(code);
+            
+            // Update customer input placeholder
+            const customerInput = document.getElementById('customer-input');
+            customerInput.placeholder = 'Click to see available customers...';
+        }
+
+        // Setup customer input
+        function setupCustomerInput() {
+            const input = document.getElementById('customer-input');
+            const suggestions = document.getElementById('customer-suggestions');
+            
+            // Show customers when clicking the input
+            input.addEventListener('click', function() {
+                if (!destinationSelected) {
+                    showAlert('warning', '⚠️ Please select a destination first');
+                    return;
+                }
+                
+                if (currentDestinationCustomers.length > 0) {
+                    showCustomerSuggestions();
+                }
+            });
+
+            // Filter customers when typing
+            input.addEventListener('input', function() {
+                const value = this.value.toLowerCase().trim();
+                
+                if (value.length === 0 && destinationSelected) {
+                    showCustomerSuggestions();
+                    return;
+                }
+                
+                if (currentDestinationCustomers.length > 0) {
+                    showCustomerSuggestions(value);
+                }
+            });
+
+            input.addEventListener('blur', function() {
+                setTimeout(() => {
+                    suggestions.style.display = 'none';
+                }, 150);
+            });
+        }
+
+        // Show customer suggestions
+        function showCustomerSuggestions(query = '') {
+            const suggestions = document.getElementById('customer-suggestions');
+            const status = document.getElementById('customer-status');
+            
+            let filtered = currentDestinationCustomers;
+            
+            if (query) {
+                filtered = currentDestinationCustomers.filter(customer => 
+                    customer.toLowerCase().includes(query)
+                );
+            }
+
+            if (filtered.length === 0) {
+                suggestions.style.display = 'none';
+                status.className = 'input-status error';
+                return;
+            }
+
+            status.className = 'input-status success';
+
+            suggestions.innerHTML = filtered.slice(0, 15).map(customer => 
+                `<div class="autocomplete-suggestion" onclick="selectCustomer('${customer.replace(/'/g, "\\'")}')">
+                    <div class="suggestion-main">${customer}</div>
+                </div>`
+            ).join('');
+            
+            suggestions.style.display = 'block';
+        }
+
+        // Select customer from suggestions
+        function selectCustomer(customer) {
+            const input = document.getElementById('customer-input');
+            const suggestions = document.getElementById('customer-suggestions');
+            
+            input.value = customer;
+            suggestions.style.display = 'none';
+        }
+
+        // Load customers by destination
+        async function loadCustomersByDestination(destination) {
+            if (!destination) return;
+            
+            const status = document.getElementById('customer-status');
+            status.className = 'input-status loading';
+            
+            try {
+                console.log(`🔍 Loading customers for destination: ${destination}`);
+                
+                const response = await fetch(`${API_ENDPOINTS.customersByDestination}?destination=${encodeURIComponent(destination)}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentDestinationCustomers = result.data.customers || [];
+                    status.className = 'input-status success';
+                    
+                    console.log(`✅ Found ${currentDestinationCustomers.length} customers for destination ${result.data.destination}`);
+                    
+                    if (currentDestinationCustomers.length === 0) {
+                        showAlert('info', `ℹ️ No customers found for destination "${destination}". You may need to enter a customer manually.`);
+                    } else {
+                        // Clear any previous info messages
+                        const alertContainer = document.getElementById('alert-container');
+                        if (alertContainer.innerHTML.includes('No customers found')) {
+                            alertContainer.innerHTML = '';
+                        }
+                    }
+                } else {
+                    console.warn('Failed to load customers by destination:', result.message);
+                    currentDestinationCustomers = [];
+                    status.className = 'input-status error';
+                }
+            } catch (error) {
+                console.error('Error loading customers by destination:', error);
+                currentDestinationCustomers = [];
+                status.className = 'input-status error';
+            }
+        }
+
+        // Reset customer input
+        function resetCustomerInput() {
+            const customerInput = document.getElementById('customer-input');
+            const customerStatus = document.getElementById('customer-status');
+            
+            customerInput.value = '';
+            customerInput.placeholder = 'Select destination first...';
+            customerStatus.className = 'input-status';
+            currentDestinationCustomers = [];
+        }
+
+        // Show special remarks modal
+        async function showSpecialRemarks() {
+            const modal = document.getElementById('special-remarks-modal');
+            const body = document.getElementById('special-remarks-body');
+            
+            modal.style.display = 'flex';
+            
+            // Show loading state
+            body.innerHTML = `
+                <div class="loading" style="display: block;">
+                    <div class="spinner"></div>
+                    <p>Loading special cases...</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(API_ENDPOINTS.specialRemarks);
+                const result = await response.json();
+                
+                if (result.success) {
+                    displaySpecialRemarks(result.data);
+                } else {
+                    body.innerHTML = `<div class="alert alert-error">❌ Failed to load special remarks: ${result.message}</div>`;
+                }
+            } catch (error) {
+                console.error('Error loading special remarks:', error);
+                body.innerHTML = `<div class="alert alert-error">❌ Error loading special remarks: ${error.message}</div>`;
+            }
+        }
+
+        // Display special remarks data
+        function displaySpecialRemarks(data) {
+            const body = document.getElementById('special-remarks-body');
+            
+            const { summary, unmappedDestinations, specialRemarks } = data;
+            
+            body.innerHTML = `
+                <div class="summary-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">${summary.totalRecords}</div>
+                        <div class="stat-label">Total Records</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${summary.mappedRecords}</div>
+                        <div class="stat-label">With City Names</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${summary.unmappedRecords}</div>
+                        <div class="stat-label">Without City Names</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">${summary.specialRemarksCount}</div>
+                        <div class="stat-label">Special Remarks</div>
+                    </div>
+                </div>
+                
+                <h4 style="color: #17a2b8; margin-bottom: 15px;">🚫 Unmapped Destinations (${unmappedDestinations.length})</h4>
+                <div class="special-list">
+                    ${unmappedDestinations.length > 0 ? 
+                        unmappedDestinations.map(dest => 
+                            `<div class="special-item">
+                                <strong>${dest.destination}</strong>
+                                <span class="count">${dest.record_count}</span>
+                            </div>`
+                        ).join('') : 
+                        '<div class="alert alert-success">🎉 All destinations have city names!</div>'
+                    }
+                </div>
+                
+                <h4 style="color: #17a2b8; margin: 20px 0 15px 0;">📝 Records with Special Remarks (${specialRemarks.length})</h4>
+                <div class="special-list">
+                    ${specialRemarks.length > 0 ? 
+                        specialRemarks.map(remark => 
+                            `<div class="special-item">
+                                <strong>${remark.destination}</strong> ${remark.city_name || ''} - ${remark.customer}
+                                <br><small style="color: #666;">Forwarder: ${remark.forwarder}</small>
+                                <br><small style="color: #856404;">Remark: ${remark.remark}</small>
+                                <span class="count">${remark.record_count}</span>
+                            </div>`
+                        ).join('') : 
+                        '<div class="alert alert-info">ℹ️ No special remarks found.</div>'
+                    }
+                </div>
+            `;
+        }
+
+        // Close special remarks modal
+        function closeSpecialRemarksModal() {
+            document.getElementById('special-remarks-modal').style.display = 'none';
         }
 
         // Search forwarder
@@ -588,7 +1027,7 @@
             
             try {
                 const params = new URLSearchParams({
-                    dest: up(document.getElementById('dest-input').value),
+                    dest: document.getElementById('dest-input').value.trim(),
                     customer: up(document.getElementById('customer-input').value),
                     priority: document.querySelector('input[name="priority"]:checked').value,
                     dg: document.querySelector('input[name="dg"]:checked').value,
@@ -624,7 +1063,7 @@
             // Determine action info based on forwarder
             const forwarder = (data.forwarder || '').trim().toUpperCase();
             const downloadForwarders = ['AOC', 'MNX', 'STERLING', 'PORTS', 'CRANE'];
-            const redirectForwarders = ['DHL Express', 'Fedex', 'UPS SAVER'];
+            const redirectForwarders = ['DHL EXPRESS', 'FEDEX', 'UPS SAVER'];
             
             let actionInfo = '';
             if (downloadForwarders.includes(forwarder)) {
@@ -645,8 +1084,18 @@
                 </div>`;
             }
             
+            // Display destination with city name if available
+            let destinationDisplay = data.destination || 'N/A';
+            if (data.city_name) {
+                destinationDisplay = `${data.city_name} (${data.destination})`;
+            }
+            
             modalBody.innerHTML = `
                 <div class="result-details">
+                    <div class="result-item">
+                        <strong>Destination</strong>
+                        ${destinationDisplay}
+                    </div>
                     <div class="result-item">
                         <strong>Shipping Type</strong>
                         ${data.shipping_type || 'N/A'}
@@ -711,9 +1160,9 @@
             
             // Handle redirects for courier services
             const redirectForwarders = {
-                'DHL Express': 'https://www.dhl.com',
-                'Fedex': 'https://www.fedex.com',
-                'UPS': 'https://www.ups.com'
+                'DHL EXPRESS': 'https://www.dhl.com',
+                'FEDEX': 'https://www.fedex.com',
+                'UPS SAVER': 'https://www.ups.com'
             };
             
             // Check for downloadable forms
@@ -847,10 +1296,17 @@
             }
         });
 
+        document.getElementById('special-remarks-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSpecialRemarksModal();
+            }
+        });
+
         // Handle escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+                closeSpecialRemarksModal();
             }
         });
 
